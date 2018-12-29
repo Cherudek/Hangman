@@ -15,13 +15,13 @@ public class Prompter {
 
         do {
             String guessInput = scanner.nextLine();
-            if (guessInput.isEmpty()) {
-                System.out.println("Please enter a letter!");
-                return isHit;
-            }
-            Character guess = guessInput.charAt(0);
+//            if (guessInput.isEmpty()) {
+//                System.out.println("Please enter a letter!");
+//                return isHit;
+//            }
+//            Character guess = guessInput.charAt(0);
             try {
-                isHit = game.applyGuess(guess);
+                isHit = game.applyGuess(guessInput);
                 isAcceptable = true;
             } catch (IllegalArgumentException iae) {
                 System.out.printf("%s Please Try Again: ", iae.getMessage());

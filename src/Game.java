@@ -11,10 +11,6 @@ public class Game {
         misses = "";
     }
 
-    public String getAnswer() {
-        return answer;
-    }
-
     private char normalizeLetter(char letter) {
         if (!Character.isLetter(letter)) {
             throw new IllegalArgumentException("Sorry, Only Letters are allowed!");
@@ -26,6 +22,13 @@ public class Game {
         return letter;
     }
 
+    public boolean applyGuess(String letter) {
+        if(letter.length() == 0) {
+            throw new IllegalArgumentException("No letter found ");
+        }
+        return applyGuess(letter.charAt(0));
+
+    }
 
     public boolean applyGuess(Character letter) {
         letter = normalizeLetter(letter);
@@ -54,6 +57,4 @@ public class Game {
         int numberOfMisses = misses.length();
         return MAX_NUMBER_OF_MISSES - numberOfMisses;
     }
-
-
 }
