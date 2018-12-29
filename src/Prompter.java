@@ -15,11 +15,6 @@ public class Prompter {
 
         do {
             String guessInput = scanner.nextLine();
-//            if (guessInput.isEmpty()) {
-//                System.out.println("Please enter a letter!");
-//                return isHit;
-//            }
-//            Character guess = guessInput.charAt(0);
             try {
                 isHit = game.applyGuess(guessInput);
                 isAcceptable = true;
